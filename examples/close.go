@@ -1,15 +1,16 @@
 package main
 
 import (
-	"github.com/avarabyeu/yeelight"
 	"log"
+
+	"github.com/avarabyeu/yeelight"
 )
 
 func main() {
 	y, err := yeelight.Discover()
 	checkError(err)
 
-	y.SetPower(true)
+	y.SetPower(false)
 }
 
 func checkError(err error) {
