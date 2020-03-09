@@ -153,6 +153,18 @@ func (y *Yeelight) SetPower(on bool) error {
 	return err
 }
 
+//IncreaseBright is used to Increase bright
+func (y *Yeelight) IncreaseBright() error {
+	_, err := y.executeCommand("set_adjust", "increase", "bright")
+	return err
+}
+
+//DecreaseBright is used to Decrease bright
+func (y *Yeelight) DecreaseBright() error {
+	_, err := y.executeCommand("set_adjust", "decrease", "bright")
+	return err
+}
+
 func (y *Yeelight) randID() int {
 	i := y.rnd.Intn(100)
 	return i
