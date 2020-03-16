@@ -3,9 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/avarabyeu/yeelight"
 	"log"
 	"time"
+
+	"github.com/avarabyeu/yeelight"
 )
 
 func main() {

@@ -27,8 +27,12 @@ func main() {
 			y.IncreaseBright()
 		case "down", "decrease":
 			y.DecreaseBright()
+		case "max":
+			y.IncreaseBrightToMax()
+		case "mini":
+			y.DecreaseBrightToMini()
 		default:
-			fmt.Printf("Try: %s <open|close|up|down|increase|decrease>\n", os.Args[0])
+			fmt.Printf("Try: %s <open|close|up|down|increase|decrease|max|mini>\n", os.Args[0])
 		}
 	} else {
 		y.SetPower(true)

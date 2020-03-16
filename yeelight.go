@@ -153,15 +153,27 @@ func (y *Yeelight) SetPower(on bool) error {
 	return err
 }
 
-//IncreaseBright is used to Increase bright
+//IncreaseBright is used to Increase brightness
 func (y *Yeelight) IncreaseBright() error {
 	_, err := y.executeCommand("set_adjust", "increase", "bright")
 	return err
 }
 
-//DecreaseBright is used to Decrease bright
+//DecreaseBright is used to Decrease brightness
 func (y *Yeelight) DecreaseBright() error {
 	_, err := y.executeCommand("set_adjust", "decrease", "bright")
+	return err
+}
+
+//IncreaseToMax is used to Increase brightness to maximum
+func (y *Yeelight) IncreaseBrightToMax() error {
+	_, err := y.executeCommand("set_bright", 100, "smooth", 500)
+	return err
+}
+
+//DecreaseBrightToMin is used to Decrease brightness to minimum
+func (y *Yeelight) DecreaseBrightToMini() error {
+	_, err := y.executeCommand("set_bright", 1, "smooth", 500)
 	return err
 }
 
